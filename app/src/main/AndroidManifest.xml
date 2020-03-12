@@ -19,6 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ScoreActivity" />
+        <activity android:name=".activity.LifeCyclerActivity" />
+        <activity android:name=".activity.LiveDataActivity" />
+        <activity android:name=".activity.DataBindingActivity" />
+        <activity android:name=".activity.NavigationActivity" />
     </application>
 
 </manifest>

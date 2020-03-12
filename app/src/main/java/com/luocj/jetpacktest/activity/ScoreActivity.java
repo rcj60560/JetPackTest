@@ -1,7 +1,6 @@
 package com.luocj.jetpacktest.activity;
 
 import android.os.Bundle;
-import android.widget.ScrollView;
 
 import com.luocj.jetpacktest.R;
 import com.luocj.jetpacktest.databinding.ActivityScoreBinding;
@@ -26,7 +25,6 @@ public class ScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         scoreBinding = DataBindingUtil.setContentView(this, R.layout.activity_score);
         scoreModel = new ViewModelProvider(this).get(ScoreModel.class);
-
         scoreBinding.setData(scoreModel);
         scoreBinding.setLifecycleOwner(this);
 
