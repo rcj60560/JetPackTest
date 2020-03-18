@@ -20,7 +20,6 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setBackgroundColor(Color.WHITE);
         NavController navController = Navigation.findNavController(this, R.id.fragment2);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }

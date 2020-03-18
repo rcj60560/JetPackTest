@@ -25,7 +25,7 @@ public class DataBindingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        databindingBinding = DataBindingUtil.setContentView(this,R.layout.activity_databinding);
+        databindingBinding = DataBindingUtil.setContentView(this, R.layout.activity_databinding);
         dataModel = new ViewModelProvider(this).get(MyLiveDataModel.class);
         databindingBinding.setMydata(dataModel);
         databindingBinding.setLifecycleOwner(this);

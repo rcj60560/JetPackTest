@@ -11,6 +11,7 @@ import com.luocj.jetpacktest.activity.LifeCyclerActivity;
 import com.luocj.jetpacktest.activity.LiveDataActivity;
 import com.luocj.jetpacktest.activity.NavigationActivity;
 import com.luocj.jetpacktest.activity.ScoreActivity;
+import com.luocj.jetpacktest.activity.SplashActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,5 +42,10 @@ public class MainActivity extends AppCompatActivity {
     //navigation
     public void btn4(View view) {
         startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+    }
+
+    //ppjoker
+    public void btn5(View view) {
+        startActivity(new Intent(MainActivity.this, SplashActivity.class ));
     }
 }

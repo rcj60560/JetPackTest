@@ -1,6 +1,5 @@
 package com.luocj.jetpacktest.fragment;
 
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import com.luocj.jetpacktest.R;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel mViewModel;
+    private HomeViewModel2 mViewModel;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -26,13 +25,13 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.home_fragment, container, false);
+        return inflater.inflate(R.layout.home_fragment2, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(HomeViewModel2.class);
         // TODO: Use the ViewModel
     }
 

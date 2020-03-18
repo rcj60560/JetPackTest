@@ -1,6 +1,5 @@
 package com.luocj.jetpacktest.fragment;
 
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import com.luocj.jetpacktest.R;
 
 public class MineFragment extends Fragment {
 
-    private MineViewModel mViewModel;
+    private MineViewModel2 mViewModel;
 
     public static MineFragment newInstance() {
         return new MineFragment();
@@ -26,13 +25,13 @@ public class MineFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.mine_fragment, container, false);
+        return inflater.inflate(R.layout.mine_fragment2, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MineViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(MineViewModel2.class);
         // TODO: Use the ViewModel
     }
 

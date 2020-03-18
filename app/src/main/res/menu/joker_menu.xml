@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="首页" />
+    <item
+        android:id="@+id/find"
+        android:icon="@drawable/ic_find_in_page_black_24dp"
+        android:title="发现" />
+    <item
+        android:id="@+id/mine"
+        android:icon="@drawable/ic_insert_emoticon_black_24dp"
+        android:title="我的" />
+</menu>
