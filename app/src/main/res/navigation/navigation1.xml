@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottom_navigation"
+    android:id="@+id/navigation1.xml"
     app:startDestination="@id/homeFragment2">
 
     <fragment
@@ -11,13 +11,13 @@
         android:label="home_fragment2"
         tools:layout="@layout/home_fragment2" />
     <fragment
-        android:id="@+id/findFragment"
-        android:name="com.luocj.jetpacktest.fragment.FindFragment"
-        android:label="find_fragment"
-        tools:layout="@layout/find_fragment" />
-    <fragment
         android:id="@+id/mineFragment2"
         android:name="com.luocj.jetpacktest.fragment.MineFragment"
         android:label="mine_fragment2"
         tools:layout="@layout/mine_fragment2" />
+    <fragment
+        android:id="@+id/findFragment"
+        android:name="com.luocj.jetpacktest.fragment.FindFragment"
+        android:label="find_fragment"
+        tools:layout="@layout/find_fragment" />
 </navigation>
