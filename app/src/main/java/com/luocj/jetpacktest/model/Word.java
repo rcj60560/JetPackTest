@@ -13,7 +13,7 @@ public class Word {
     @ColumnInfo(name = "english_word")
     private String word;
 
-    @ColumnInfo(name = "")
+    @ColumnInfo(name = "chinese_meaning")
     private String chinesMeaning;
 
     public Word(String word, String chinesMeaning) {
