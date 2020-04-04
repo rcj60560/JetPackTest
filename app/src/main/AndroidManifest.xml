@@ -38,6 +38,7 @@
         <activity android:name=".activity.NavigationActivity" />
         <activity android:name=".activity.SplashActivity" />
         <activity android:name=".activity.RoomTestActivity" />
+        <activity android:name=".activity.Test1Activity" />
     </application>
 
 </manifest>
