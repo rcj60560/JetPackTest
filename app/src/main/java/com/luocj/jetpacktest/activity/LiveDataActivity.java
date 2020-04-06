@@ -40,7 +40,5 @@ public class LiveDataActivity extends AppCompatActivity {
                 liveDataModel.add();
             }
         });
-
-
     }
 }

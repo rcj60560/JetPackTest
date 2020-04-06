@@ -17,9 +17,7 @@ public class PersonViewModel extends AndroidViewModel {
 
     public PersonViewModel(@NonNull Application application) {
         super(application);
-
         repository = new PersonRepository(application);
-
     }
 
     public LiveData<List<Person>> getAllLiveData() {

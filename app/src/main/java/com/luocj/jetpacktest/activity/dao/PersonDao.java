@@ -30,6 +30,5 @@ public interface PersonDao {
 
     @Query("SELECT * FROM PERSON ORDER BY ID DESC")
 //    List<Person> getAllWords();
-
     LiveData<List<Person>> getAllPerson();
 }
