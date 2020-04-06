@@ -10,13 +10,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.room.Room;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.luocj.jetpacktest.R;
 import com.luocj.jetpacktest.activity.dao.PersonDao;
 import com.luocj.jetpacktest.activity.dao.PersonDatabase;
 import com.luocj.jetpacktest.model.Person;
-import com.luocj.jetpacktest.model.Word;
+import com.luocj.jetpacktest.model.PersonViewModel;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class RoomTest2Activity extends AppCompatActivity {
     private List<Person> list;
     private PersonDatabase personDatabase;
     private PersonDao personDao;
+    private PersonViewModel personViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,11 +39,12 @@ public class RoomTest2Activity extends AppCompatActivity {
         btnUpdate = findViewById(R.id.button14);
         btnDelete = findViewById(R.id.button15);
 
+        personViewModel = new ViewModelProvider(this).get(PersonViewModel.class);
 
-        personDatabase = PersonDatabase.getINSTANCE(this);
-        personDao = personDatabase.getPersonDao();
-        LiveData<List<Person>> allWordsLive = personDao.getAllWords();
-        allWordsLive.observe(this, new Observer<List<Person>>() {
+//        personDatabase = PersonDatabase.getINSTANCE(this);
+//        personDao = personDatabase.getPersonDao();
+//        LiveData<List<Person>> allWordsLive = personDao.getAllPerson();
+        personViewModel.getAllLiveData().observe(this, new Observer<List<Person>>() {
             @Override
             public void onChanged(List<Person> people) {
                 StringBuilder str = new StringBuilder();
@@ -59,14 +61,17 @@ public class RoomTest2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Person zs = new Person("zhangsan", "12");
                 Person ls = new Person("lisi", "123");
-                new InsertAsyTask(personDao).execute(zs, ls);
+
+                personViewModel.insertPerson(zs, ls);
+//                new InsertAsyTask(personDao).execute(zs, ls);
             }
         });
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ClearAllAsyTask(personDao).execute();
+//                new ClearAllAsyTask(personDao).execute();
+                personViewModel.clearAllPerson();
             }
         });
 
@@ -75,82 +80,22 @@ public class RoomTest2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Person person = new Person("王五", "12");
                 person.setId(6);
-                new UpdateAsyTask(personDao).execute(person);
+//                new UpdateAsyTask(personDao).execute(person);
+                personViewModel.updatePerson(person);
             }
         });
+
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Person person = new Person("", "");
                 person.setId(16);
-                new DeleteAsyTask(personDao).execute(person);
+//                new DeleteAsyTask(personDao).execute(person);
+                personViewModel.deletePerson(person);
             }
         });
     }
 
 
-    static class InsertAsyTask extends AsyncTask<Person, Void, Void> {
-
-        private final PersonDao personDao;
-
-        public InsertAsyTask(PersonDao personDao) {
-            this.personDao = personDao;
-        }
-
-        @Override
-        protected Void doInBackground(Person... persions) {
-            personDao.insertPersion(persions);
-            return null;
-        }
-    }
-
-    //删除所有数据
-    static class ClearAllAsyTask extends AsyncTask<Person, Void, Void> {
-
-        private final PersonDao personDao;
-
-        public ClearAllAsyTask(PersonDao personDao) {
-            this.personDao = personDao;
-        }
-
-        @Override
-        protected Void doInBackground(Person... persions) {
-            personDao.deleteAllWord();
-            return null;
-        }
-    }
-
-
-    //根据id更新数据
-    static class UpdateAsyTask extends AsyncTask<Person, Void, Void> {
-
-        private final PersonDao personDao;
-
-        public UpdateAsyTask(PersonDao personDao) {
-            this.personDao = personDao;
-        }
-
-        @Override
-        protected Void doInBackground(Person... persions) {
-            personDao.updatePersion(persions);
-            return null;
-        }
-    }
-
-    //删除
-    static class DeleteAsyTask extends AsyncTask<Person, Void, Void> {
-
-        private final PersonDao personDao;
-
-        public DeleteAsyTask(PersonDao personDao) {
-            this.personDao = personDao;
-        }
-
-        @Override
-        protected Void doInBackground(Person... persions) {
-            personDao.deletetPersion(persions);
-            return null;
-        }
-    }
 }
