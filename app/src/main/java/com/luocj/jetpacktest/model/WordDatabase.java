@@ -1,6 +1,5 @@
 package com.luocj.jetpacktest.model;
 
-import androidx.databinding.Bindable;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 

@@ -1,4 +1,4 @@
-package com.luocj.jetpacktest.activity;
+package com.luocj.jetpacktest.activity.room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,11 @@ public class RoomTestActivity extends AppCompatActivity {
 
     //增删改查基础使用
     public void btn1(View view) {
-        startActivity(new Intent(RoomTestActivity.this, Test1Activity.class ));
+        startActivity(new Intent(RoomTestActivity.this, RoomTest1Activity.class));
+    }
+
+    //rom使用优化
+    public void btn2(View view) {
+        startActivity(new Intent(RoomTestActivity.this, RoomTest2Activity.class));
     }
 }

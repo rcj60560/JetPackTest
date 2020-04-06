@@ -1,4 +1,4 @@
-package com.luocj.jetpacktest.activity;
+package com.luocj.jetpacktest.activity.room;
 
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +17,7 @@ import com.luocj.jetpacktest.model.WordDatabase;
 import java.util.List;
 
 //room 增删改查基本使用
-public class Test1Activity extends AppCompatActivity {
+public class RoomTest1Activity extends AppCompatActivity {
     private TextView textView;
     private Button btnInsert, btnClear, btnUpdate, btnDelete;
     private WordDao wordDao;

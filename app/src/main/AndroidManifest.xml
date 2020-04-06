@@ -37,8 +37,9 @@
         <activity android:name=".activity.DataBindingActivity" />
         <activity android:name=".activity.NavigationActivity" />
         <activity android:name=".activity.SplashActivity" />
-        <activity android:name=".activity.RoomTestActivity" />
-        <activity android:name=".activity.Test1Activity" />
+        <activity android:name=".activity.room.RoomTestActivity" />
+        <activity android:name=".activity.room.RoomTest1Activity" />
+        <activity android:name=".activity.room.RoomTest2Activity" />
     </application>
 
 </manifest>

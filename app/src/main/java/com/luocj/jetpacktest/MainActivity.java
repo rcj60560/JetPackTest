@@ -10,7 +10,7 @@ import com.luocj.jetpacktest.activity.DataBindingActivity;
 import com.luocj.jetpacktest.activity.LifeCyclerActivity;
 import com.luocj.jetpacktest.activity.LiveDataActivity;
 import com.luocj.jetpacktest.activity.NavigationActivity;
-import com.luocj.jetpacktest.activity.RoomTestActivity;
+import com.luocj.jetpacktest.activity.room.RoomTestActivity;
 import com.luocj.jetpacktest.activity.ScoreActivity;
 import com.luocj.jetpacktest.activity.SplashActivity;
 
