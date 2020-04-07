@@ -36,8 +36,6 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(HomeViewModel2.class);
-        // TODO: Use the ViewModel
-
         inflate.findViewById(R.id.test1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

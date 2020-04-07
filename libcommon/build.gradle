@@ -35,6 +35,12 @@ dependencies {
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 
+    //paging分页组件
+    api 'androidx.paging:paging-runtime:2.1.0'
+    //页面刷新组件
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'
+
 
 
 }
