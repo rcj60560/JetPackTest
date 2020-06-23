@@ -1,0 +1,4 @@
+include ':app'
+rootProject.name='JetPackTest'
+include ':netlib'
+include ':libcommon'
