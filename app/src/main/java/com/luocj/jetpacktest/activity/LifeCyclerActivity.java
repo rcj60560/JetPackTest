@@ -25,18 +25,14 @@ public class LifeCyclerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lifecycle);
         btn1 = findViewById(R.id.btn1);
         tv1 = findViewById(R.id.tvNumber1);
-
-        //test
         numberModel = new ViewModelProvider(this).get(NumberModel.class);
 
-        NumberModel numberModel = new ViewModelProvider(this).get(this.numberModel.getClass());
-
-        tv1.setText(String.valueOf(this.numberModel.getNumber()));
+        tv1.setText(String.valueOf(numberModel.getNumber()));
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LifeCyclerActivity.this.numberModel.setNumber(LifeCyclerActivity.this.numberModel.getNumber() + 1);
-                tv1.setText(String.valueOf(LifeCyclerActivity.this.numberModel.getNumber()));
+                numberModel.setNumber(numberModel.getNumber() + 1);
+                tv1.setText(String.valueOf(numberModel.getNumber()));
             }
         });
     }
