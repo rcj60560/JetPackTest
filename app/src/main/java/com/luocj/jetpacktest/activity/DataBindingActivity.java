@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.luocj.jetpacktest.R;
@@ -29,5 +30,6 @@ public class DataBindingActivity extends AppCompatActivity {
         dataModel = new ViewModelProvider(this).get(MyLiveDataModel.class);
         databindingBinding.setMydata(dataModel);
         databindingBinding.setLifecycleOwner(this);
+        //test
     }
 }
