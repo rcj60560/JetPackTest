@@ -10,6 +10,7 @@ import com.luocj.jetpacktest.activity.DataBindingActivity;
 import com.luocj.jetpacktest.activity.LifeCyclerActivity;
 import com.luocj.jetpacktest.activity.LiveDataActivity;
 import com.luocj.jetpacktest.activity.NavigationActivity;
+import com.luocj.jetpacktest.activity.paging.PagingActivity;
 import com.luocj.jetpacktest.activity.room.RoomTestActivity;
 import com.luocj.jetpacktest.activity.ScoreActivity;
 import com.luocj.jetpacktest.activity.SplashActivity;
@@ -52,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
     //    Room
     public void btn6(View view) {
-        startActivity(new Intent(MainActivity.this, RoomTestActivity.class ));
+        startActivity(new Intent(MainActivity.this, RoomTestActivity.class));
+    }
+
+    public void paging(View view) {
+        startActivity(new Intent(MainActivity.this, PagingActivity.class));
     }
 }
