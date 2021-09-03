@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.paging.DataSource;
 import androidx.paging.LivePagedListBuilder;
 import androidx.paging.PagedList;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,8 @@ import java.util.List;
 
 public class PagingActivity extends AppCompatActivity {
 
+    private static final String TAG = PagingActivity.class.getName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +38,31 @@ public class PagingActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         final PagingAdapter adapter = new PagingAdapter();
         rv.setAdapter(adapter);
-
+        PagingViewModel pagingViewModel = new ViewModelProvider(this).get(PagingViewModel.class);
+        pagingViewModel.getArticleLiveData().observe(this, new Observer<PagedList<Student>>() {
+            @Override
+            public void onChanged(PagedList<Student> students) {
+                adapter.submitList(students);
+            }
+        });
+        pagingViewModel.getBoundaryPageData().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                Log.i(TAG, "onChanged:  " + aBoolean);
+            }
+        });
     }
 
+    private DataSource.Factory<Integer, Student> getDataList() {
+
+        return new DataSource.Factory<Integer, Student>() {
+            @NonNull
+            @Override
+            public DataSource<Integer, Student> create() {
+                return null;
+            }
+        };
+    }
 
 
     private class PagingAdapter extends PagedListAdapter<Student, PagingAdapter.Hodler> {
